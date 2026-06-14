@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Vazirmatn', Tahoma, sans-serif;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+  --color-warning: #d97706;
+  --color-canvas: #e8edf4;
+  --color-surface: #f3f6fa;
+  --color-surface-elevated: #fbfcfe;
+  --color-border-soft: #d8e0ea;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: #0f172a;
+  background-color: var(--color-canvas);
+  background-image:
+    radial-gradient(ellipse 120% 70% at 50% -25%, rgb(59 130 246 / 0.09), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 0% 100%, rgb(148 163 184 / 0.14), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 100% 40%, rgb(37 99 235 / 0.05), transparent 45%),
+    linear-gradient(165deg, #eef2f8 0%, #e4eaf2 50%, #e9eef5 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-2xl border border-slate-200/70 bg-surface-elevated/95 shadow-sm shadow-slate-900/[0.04] backdrop-blur-sm;
+  }
+
+  .surface-segment {
+    @apply rounded-2xl border border-slate-200/60 bg-surface/90 p-1 shadow-sm shadow-slate-900/[0.03] backdrop-blur-sm;
+  }
+
+  .glass-bar {
+    @apply border-slate-200/60 bg-surface-elevated/85 backdrop-blur-md;
+  }
+
+  .auth-panel {
+    @apply rounded-3xl border border-slate-200/70 bg-surface-elevated/95 p-6 shadow-lg shadow-slate-900/10 backdrop-blur-md sm:p-8;
+  }
+
+  .modal-panel {
+    @apply relative rounded-2xl border border-slate-200/70 bg-surface-elevated/98 p-6 shadow-xl shadow-slate-900/15 backdrop-blur-md;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-slate-300/80 bg-surface-elevated/90 px-4 py-3 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100;
+  }
+}
